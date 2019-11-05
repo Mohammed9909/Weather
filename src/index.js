@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import MyList from './List/MyList'
 
 const toDos = [
     'Build a todo App',
