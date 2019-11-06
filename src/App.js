@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios'
 import City from './List/City'
 import { Button, Nav, NavDropdown, Navbar, Form, FormControl } from 'react-bootstrap';
-
+import Map from './List/Map'
 
 class App extends Component {
 
@@ -110,7 +110,7 @@ class App extends Component {
             </Form>
           </Navbar.Collapse>
         </Navbar>
-
+        <Map/>
         {cityList}
       </div>
     );
