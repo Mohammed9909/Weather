@@ -67,6 +67,15 @@ class App extends Component {
     });
   }
 
+  deleteone = (city) => {
+    let cities = [...this.state.cities]
+    let index = cities.indexOf(city)
+    cities.splice(index, 1)
+    this.setState({
+      cities: cities
+    })
+    
+  }
   // changeBody(e) {
   //   let newBody = prompt("What should the city be?")
     
@@ -76,7 +85,7 @@ class App extends Component {
 
   render() {
     const cityList = this.state.cities.map((city, index) => {
-      return <City data={city} key={index} />
+      return <City deleteone={this.deleteone} data={city} key={index} />
     })
     return (
       <div>
