@@ -28,7 +28,8 @@ body{
 
 .bar{
   position: relative;
-  left: 50px;
+  left: 650px;
+  padding-top: 10px;
 }
 .delete:hover{
   color: #00a181e1;
