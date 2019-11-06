@@ -96,7 +96,7 @@ class App extends Component {
     return (
       <div>
         <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="#home">WEATHER</Navbar.Brand>
+          <Navbar.Brand href="#home">WEATHER ☀</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
@@ -110,6 +110,11 @@ class App extends Component {
             </Form>
           </Navbar.Collapse>
         </Navbar>
+        <footer className="footer">
+      <div className="container">
+        <div className="text-muted">Created by Mohammed Al-Ofaysan</div>
+      </div>
+    </footer>
         {cityList}
       </div>
     );
