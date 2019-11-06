@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const toDos = [
     'Build a todo App',
@@ -9,3 +10,4 @@ const toDos = [
     'Make a list of stuff to do'
 ]
 ReactDOM.render(<App theList = {toDos}/>, document.getElementById('root'));
+    

@@ -22,6 +22,6 @@
 }
 
 .bar{
-  position: fixed;
+  position: relative;
   left: 650px;
 }
