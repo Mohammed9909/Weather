@@ -100,12 +100,8 @@ class App extends Component {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-
-              
                 <NavDropdown.Divider />
-                
-                <Button variant="btn btn-danger" onClick={this.clearList}>Delete All!</Button>
-              
+                <Button variant="btn btn-danger" onClick={this.clearList}>Delete All!</Button> 
             </Nav>
             <Form inline>
               <FormControl type="text" placeholder="Search" className="mr-sm-2" value={this.state.cityName}
