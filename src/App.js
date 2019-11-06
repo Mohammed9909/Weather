@@ -28,8 +28,8 @@ class App extends Component {
 
   Search = (e) => {
     const cities = [...this.state.cities];
-
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.cityName}&APPID=012692593491fb24c2a5e017bb7649fa`)
+    const cName = this.state.cityName ? this.state.cityName : e;
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cName}&APPID=012692593491fb24c2a5e017bb7649fa`)
       .then((res) => {
         console.log(res.data);
 
@@ -73,18 +73,25 @@ class App extends Component {
     this.setState({
       cities: cities
     })
-    
+
   }
-  // changeBody(e) {
-  //   let newBody = prompt("What should the city be?")
-    
-  //     this.state.Search= newBody
-    
-  // }
+  changeBody = (city) => {
+    const cities = [...this.state.cities]
+    let index = cities.findIndex(city2 => {
+      return city2.cityName === city.cityName;
+    });
+    cities.splice(index, 1)
+    this.setState({
+      cities: cities
+    })
+    let newBody = prompt("What should the city be?");
+
+    setTimeout(() => this.Search(newBody), 1000);
+  }
 
   render() {
     const cityList = this.state.cities.map((city, index) => {
-      return <City deleteone={this.deleteone} data={city} key={index} />
+      return <City deleteone={this.deleteone} changeBody={this.changeBody} data={city} key={index} />
     })
     return (
       <div>
@@ -94,13 +101,11 @@ class App extends Component {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
 
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+              
                 <NavDropdown.Divider />
-                {/* <NavDropdown.Item href="#action/3.3" onClick={this.changeBody}>Edit Body</NavDropdown.Item> */}
-                <NavDropdown.Item href="#action/3.4" onClick={this.clearList}>Delete All!</NavDropdown.Item>
-              </NavDropdown>
+                
+                <Button variant="btn btn-danger" onClick={this.clearList}>Delete All!</Button>
+              
             </Nav>
             <Form inline>
               <FormControl type="text" placeholder="Search" className="mr-sm-2" value={this.state.cityName}
