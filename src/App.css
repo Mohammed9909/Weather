@@ -27,8 +27,7 @@ body{
 }
 
 .bar{
-  position: relative;
-  left: 650px;
+  text-align: center;
   padding-top: 10px;
 }
 .delete:hover{

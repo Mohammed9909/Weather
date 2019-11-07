@@ -25,7 +25,6 @@ class App extends Component {
       cityName: e.target.value
     });
   }
-
   Search = (e) => {
     const cities = [...this.state.cities];
     const cName = this.state.cityName ? this.state.cityName : e;
